@@ -1,0 +1,11 @@
+name: Sync to wiki
+
+uses: cpina/github-action-push-to-another-repository@main
+env:
+  API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+with:
+  source-directory: './'
+  destination-github-username: 'openkraken'
+  destination-repository-name: 'kraken.wiki'
+  user-email: openkraken@alibaba-inc.com
+  target-branch: master
