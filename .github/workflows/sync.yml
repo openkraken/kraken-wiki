@@ -1,11 +1,26 @@
 name: Sync to wiki
 
-uses: cpina/github-action-push-to-another-repository@main
-env:
-  API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-with:
-  source-directory: './'
-  destination-github-username: 'openkraken'
-  destination-repository-name: 'kraken.wiki'
-  user-email: openkraken@alibaba-inc.com
-  target-branch: master
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: pandoc/latex
+    steps:
+      - uses: actions/checkout@v2
+      - name: Pushes to wiki repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: './'
+          destination-github-username: 'openkraken'
+          destination-repository-name: 'kraken.wiki'
+          user-email: openkraken@alibaba-inc.com
+          target-branch: master
+      - name: Test get variable exported by push-to-another-repository
+        run: echo $DESTINATION_CLONED_DIRECTORY
