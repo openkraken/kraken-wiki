@@ -5,45 +5,13 @@
 - Owner @wssgcg1213
 - [Iteration Plan](https://github.com/openkraken/kraken/issues/1218)
 
-> 以下部分还未建立 Issue，此处仅做初步计划
-
 ## April 2022
 
 - Owner @answershuto
+- [Iteration Plan](https://github.com/openkraken/kraken/issues/1326)
 
-### Stability 
-
-- [ ] 通过更严格的代码 Lint 规则限制可能高风险的逻辑
-
-### Performance 
-
-- [ ] 建立自动化的性能测试机制，输出测试报告 @answershuto
-- [ ] 🚀 重构 Dart 侧的内存数据结构，根据场景选择实现 @wssgcg1213
-- [ ] 🚀 通过无感的内部缓存提升首屏体验 @answershuto
-- [ ] 使用 miallocate 来取代内置的内存分配器 @andycall
-- [ ] 提升 Flex 布局的执行性能 @temper357
-
-### Extensionality
-
-- [ ] 多引擎支持 @andycall
-- [ ] 提供 HTMLView 为用户提供更好的体验 @answershuto
-- [ ] Stable the API of extension.
-
-
-### Web Compatibility
-
-- [ ] 新增 1000 个测试用例 @temper357
-
-### Developer
-
-### Website and Documentation
-
-- [ ] Blog 文章: Kraken 渲染管线 @wssgcg1213
-
-### Community support
-
-- [ ] 发布 0.11.1
-
+---- 
+> 以下部分还未建立 Issue，此处仅做初步计划
 
 ## May 2022
 
